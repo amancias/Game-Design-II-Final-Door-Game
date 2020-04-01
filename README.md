@@ -6,4 +6,3 @@ This game is about a door that takes on the authority of letting people into the
 
 Team Members: Albert Mancias, Sean Clipper, Raphael Kahn
 
-I need to poop
