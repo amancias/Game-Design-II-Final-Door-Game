@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 328581852}
   - component: {fileID: 328581851}
   m_Layer: 5
-  m_Name: Text
+  m_Name: No
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 418859091}
   - component: {fileID: 418859093}
   - component: {fileID: 418859092}
-  - component: {fileID: 418859094}
+  - component: {fileID: 418859095}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -448,7 +448,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 
 --- !u!222 &418859093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418859090}
   m_CullTransparentMesh: 0
---- !u!114 &418859094
+--- !u!114 &418859095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,10 +466,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 418859090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 317dfa69d342b3c40ac9729a13a611f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 96e5853603ea09545a99e2f46bed77a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 418859092}
+  CountDownText: {fileID: 418859092}
 --- !u!1 &626132602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 1493479141}
   - component: {fileID: 1493479140}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 1577112177}
   - component: {fileID: 1577112176}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Yes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
