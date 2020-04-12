@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    float currentTime = 0f;
-    float startTime = 30f;
+    public float currentTime = 0f;
+    public float startTime = 30f;
 
     public Text CountDownText;
     void Start()
@@ -20,7 +20,7 @@ public class CountdownTimer : MonoBehaviour
         if (currentTime > 0)
         {
             currentTime -= 1 * Time.deltaTime;
-            print(currentTime);
+            print(currentTime); //will not work without this line
             CountDownText.text = currentTime.ToString("0");
         }
     }
