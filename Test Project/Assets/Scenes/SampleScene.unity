@@ -154,6 +154,7 @@ MonoBehaviour:
     type: 3}
   badCharacter: {fileID: -927199367670048503, guid: e5e728a2507b0054a90e894bfa562ef7,
     type: 3}
+  buttonClick: {fileID: 477008531}
 --- !u!4 &294488788
 Transform:
   m_ObjectHideFlags: 0
@@ -177,9 +178,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477008532}
+  - component: {fileID: 477008531}
   - component: {fileID: 477008533}
   - component: {fileID: 477008534}
-  - component: {fileID: 477008531}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -200,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 1942733815}
+  buttonClicked: 0
 --- !u!4 &477008532
 Transform:
   m_ObjectHideFlags: 0
@@ -337,7 +339,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 477008531}
-        m_MethodName: goAway
+        m_MethodName: GoAway
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -608,7 +610,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 477008531}
-        m_MethodName: comeIn
+        m_MethodName: ComeIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

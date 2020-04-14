@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CharacterSpawner : MonoBehaviour
 {
-    public GameObject goodCharacter = null;
-    public GameObject badCharacter = null;
+    public GameObject goodCharacter;
+    public GameObject badCharacter;
+
+    //pulls variable from the ButtonClick class
+    public ButtonClick buttonClick;
     private bool isGood;
 
-    //Gets a random true or false boolean that will check if the upcoming character will be goor or bad
-    public bool GoodOrBad()
+    //Gets a random true or false boolean that will check if the upcoming character will be good or bad
+    private bool GoodOrBad()
     {
 
         if (Random.value >= 0.5)
@@ -19,26 +22,43 @@ public class CharacterSpawner : MonoBehaviour
         return isGood = false;
 
     }
-    // Start is called before the first frame update
-    void Start()
+    //spawms the character based on what moral compass it lies under 
+    private void SpawnCharacter()
     {
-        //calls the random good or bad character function at the beginning of the game
-        GoodOrBad();
-
-        //spawns a good or bad character model 
+        //spawns a good or bad character game object 
         if (isGood == true)
         {
-            Instantiate(goodCharacter, transform.position, Quaternion.identity);
+            goodCharacter = Instantiate(goodCharacter, transform.position, Quaternion.identity);
         }
         else
         {
-            Instantiate(badCharacter, transform.position, Quaternion.identity);
+            badCharacter = Instantiate(badCharacter, transform.position, Quaternion.identity);
         }
+    }
+
+    //when yes or no button are clicked, destroy the character game objects
+    private void DestroyCharacter()
+    {
+        if (buttonClick.buttonClicked == true)
+        {
+            Debug.Log("Destroyed character");
+            GameObject.Destroy(badCharacter);
+            GameObject.Destroy(goodCharacter); 
+        }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        //calls the function that decide and spawn the type of character 
+        GoodOrBad();
+        SpawnCharacter();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        DestroyCharacter();
     }
 }
