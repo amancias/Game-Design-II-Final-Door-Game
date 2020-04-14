@@ -10,6 +10,7 @@ public class CharacterSpawner : MonoBehaviour
     //pulls variable from the ButtonClick class
     public ButtonClick buttonClick;
     private bool isGood;
+    //private bool spawned = false;
 
     //Gets a random true or false boolean that will check if the upcoming character will be good or bad
     private bool GoodOrBad()
@@ -29,10 +30,12 @@ public class CharacterSpawner : MonoBehaviour
         if (isGood == true)
         {
             goodCharacter = Instantiate(goodCharacter, transform.position, Quaternion.identity);
+            
         }
         else
         {
             badCharacter = Instantiate(badCharacter, transform.position, Quaternion.identity);
+           
         }
     }
 
@@ -43,7 +46,10 @@ public class CharacterSpawner : MonoBehaviour
         {
             Debug.Log("Destroyed character");
             GameObject.Destroy(badCharacter);
-            GameObject.Destroy(goodCharacter); 
+            GameObject.Destroy(goodCharacter);
+            SpawnCharacter();
+            buttonClick.buttonClicked = false;
+            
         }
     }
     // Start is called before the first frame update
