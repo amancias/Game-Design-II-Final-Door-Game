@@ -5,16 +5,19 @@ using UnityEngine;
 public class ButtonClick : MonoBehaviour
 {
     public CountdownTimer Timer;
-    public void goAway()
+    public bool buttonClicked = false;
+    public void GoAway()
     {
         Debug.Log("Go away");
         Timer.currentTime = 30f;
+        buttonClicked = true;
     }
 
-    public void comeIn()
+    public void ComeIn()
     {
         Debug.Log("Come in");
         Timer.currentTime = 30f;
+        buttonClicked = true;
     }
 }
 
