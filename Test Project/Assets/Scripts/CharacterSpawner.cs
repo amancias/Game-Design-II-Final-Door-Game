@@ -47,6 +47,7 @@ public class CharacterSpawner : MonoBehaviour
             Debug.Log("Destroyed character");
             GameObject.Destroy(badCharacter);
             GameObject.Destroy(goodCharacter);
+            GoodOrBad();
             SpawnCharacter();
             buttonClick.buttonClicked = false;
             
