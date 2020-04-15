@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CharacterSpawner : MonoBehaviour
 {
+    //creates two GameObject character variables that will be assigned later in the SapwnCharacter function 
     public GameObject goodCharacter;
     public GameObject badCharacter;
 
     //pulls variable from the ButtonClick class
     public ButtonClick buttonClick;
     private bool isGood;
-    //private bool spawned = false;
 
     //Gets a random true or false boolean that will check if the upcoming character will be good or bad
     private bool GoodOrBad()
@@ -29,11 +29,13 @@ public class CharacterSpawner : MonoBehaviour
         //spawns a good or bad character game object 
         if (isGood == true)
         {
+            //instantiates a goodCharacter game object and sets it to the goodCharacter variable
             goodCharacter = Instantiate(goodCharacter, transform.position, Quaternion.identity);
             
         }
         else
         {
+            //instantiates a badCharacter game object and sets it to the badCharacter variable
             badCharacter = Instantiate(badCharacter, transform.position, Quaternion.identity);
            
         }
@@ -56,7 +58,6 @@ public class CharacterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         //calls the function that decide and spawn the type of character 
         GoodOrBad();
         SpawnCharacter();
