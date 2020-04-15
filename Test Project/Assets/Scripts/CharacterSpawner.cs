@@ -7,6 +7,7 @@ public class CharacterSpawner : MonoBehaviour
     //creates two GameObject character variables that will be assigned later in the SapwnCharacter function 
     public GameObject goodCharacter;
     public GameObject badCharacter;
+    private GameObject _character;
 
     //pulls variable from the ButtonClick class
     public ButtonClick buttonClick;
@@ -30,13 +31,13 @@ public class CharacterSpawner : MonoBehaviour
         if (isGood == true)
         {
             //instantiates a goodCharacter game object and sets it to the goodCharacter variable
-            goodCharacter = Instantiate(goodCharacter, transform.position, Quaternion.identity);
+            _character = Instantiate(goodCharacter, transform.position, Quaternion.identity);
             
         }
         else
         {
             //instantiates a badCharacter game object and sets it to the badCharacter variable
-            badCharacter = Instantiate(badCharacter, transform.position, Quaternion.identity);
+            _character = Instantiate(badCharacter, transform.position, Quaternion.identity);
            
         }
     }
@@ -47,8 +48,7 @@ public class CharacterSpawner : MonoBehaviour
         if (buttonClick.buttonClicked == true)
         {
             Debug.Log("Destroyed character");
-            GameObject.Destroy(badCharacter);
-            GameObject.Destroy(goodCharacter);
+            Destroy(_character);
             GoodOrBad();
             SpawnCharacter();
             buttonClick.buttonClicked = false;
