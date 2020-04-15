@@ -302,8 +302,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f3a2ef725d33a43a26fecb9cc481cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  badNames: []
-  goodNames: []
+  badNames:
+  - Raphael
+  - Albert
+  - Sean
+  - Donald
+  - Chad
+  - Mike
+  goodNames:
+  - Bob
+  - Jeremy
+  - Steven
+  - Jessica
+  - Ella
+  - Bonnie
 --- !u!1 &607678290
 GameObject:
   m_ObjectHideFlags: 0
