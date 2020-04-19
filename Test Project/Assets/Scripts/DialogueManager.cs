@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    //A list of names for the characters
+    //Lists of names for the characters
     public List<string> badNames = new List<string>();
     public List<string> goodNames = new List<string>();
 
@@ -26,16 +26,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    //picks a random name from the bad name list, sets it into badGoodName and outputs it
     void PickBadName()
     {
-        //picks a random name from the bad name list outputs it
+        //
         string randomBadName = badNames[Random.Range(0, badNames.Count)];
         Debug.Log(randomBadName);
     }
 
+    //picks a random name from the good name list, sets it into randomGoodNAme and outputs it
     void PickGoodName()
     {
-        //picks a random name from the good name list and outputs it
+        
         string randomGoodName = goodNames[Random.Range(0, goodNames.Count)];
         Debug.Log(randomGoodName);
     }

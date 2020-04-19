@@ -11,10 +11,10 @@ public class CharacterSpawner : MonoBehaviour
 
     //pulls variable from the ButtonClick class
     public ButtonClick buttonClick;
-    private bool isGood;
+    public bool isGood;
 
     //Gets a random true or false boolean that will check if the upcoming character will be good or bad
-    private bool GoodOrBad()
+    public bool GoodOrBad()
     {
 
         if (Random.value >= 0.5)
@@ -32,17 +32,22 @@ public class CharacterSpawner : MonoBehaviour
         {
             //instantiates a goodCharacter game object and sets it to the goodCharacter variable
             _character = Instantiate(goodCharacter, transform.position, Quaternion.identity);
+            //adds the dialogue script as a component
+            _character.AddComponent<Dailogue>();
             
         }
         else
         {
             //instantiates a badCharacter game object and sets it to the badCharacter variable
             _character = Instantiate(badCharacter, transform.position, Quaternion.identity);
+            //adds in the Dialogue script as a component
+            _character.AddComponent<Dailogue>();
            
         }
     }
 
-    //when yes or no button are clicked, destroy the character game objects
+    //when yes or no button are clicked, destroy the character game objects, randomize the good or bad boolean,
+    //then spawn a new character, and set the buttonClicked boolean back to false
     private void DestroyCharacter()
     {
         if (buttonClick.buttonClicked == true)
@@ -58,7 +63,7 @@ public class CharacterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //calls the function that decide and spawn the type of character 
+        //calls the functions that decide and spawn the type of character 
         GoodOrBad();
         SpawnCharacter();
        
