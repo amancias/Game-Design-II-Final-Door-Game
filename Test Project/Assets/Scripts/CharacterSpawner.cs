@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterSpawner : MonoBehaviour
 {
     //creates two GameObject character variables that will be assigned later in the SapwnCharacter function 
@@ -33,7 +34,7 @@ public class CharacterSpawner : MonoBehaviour
             //instantiates a goodCharacter game object and sets it to the goodCharacter variable
             _character = Instantiate(goodCharacter, transform.position, Quaternion.identity);
             //adds the dialogue script as a component
-            _character.AddComponent<Dailogue>();
+            _character.AddComponent<GoodDialogue>();
             
         }
         else
@@ -41,7 +42,7 @@ public class CharacterSpawner : MonoBehaviour
             //instantiates a badCharacter game object and sets it to the badCharacter variable
             _character = Instantiate(badCharacter, transform.position, Quaternion.identity);
             //adds in the Dialogue script as a component
-            _character.AddComponent<Dailogue>();
+            _character.AddComponent<BadDialogue>();
            
         }
     }
