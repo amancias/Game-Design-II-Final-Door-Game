@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 
@@ -16,22 +17,23 @@ public class GoodDialogue : MonoBehaviour
 
     //sets string array that will hold the sentences for good characters
     //need to put the dialogue in here
-    [SerializeField] private string[] goodSentences = { "You look like a guy who would let me in" };
+    [SerializeField] private string[] goodSentences = { "You look like a guy who would let me in", "Hello" };
     private int index;
 
     //how fast the letters in the sentences will be typed out
-    [SerializeField] private float typingSpeed;
+    [SerializeField] private float typingSpeed = .05f;
 
     public GameObject continueButton;
-
-
+ 
     /// <summary>
     /// sets the continue button and text display to the in scene game objects
     /// still need to set the continue button
     /// </summary>
     private void Start()
     {
-        //continueButton; 
+        continueButton = GameObject.FindGameObjectWithTag("Button");
+      
+
         textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(Type());
     }
@@ -59,6 +61,7 @@ public class GoodDialogue : MonoBehaviour
     public void NextSentence()
     {
         continueButton.SetActive(false);
+        Debug.Log("Testing NExt Sentence");
 
         if (index < goodSentences.Length - 1)
         {

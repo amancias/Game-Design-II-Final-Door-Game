@@ -16,11 +16,11 @@ public class BadDialogue : MonoBehaviour
 
     //sets string array that will hold the sentences for bad characters
     //need to put the dialogue in here
-    [SerializeField] private string[] badSentences = { "Hey let me in bud" };
+    [SerializeField] private string[] badSentences = { "Hey let me in bud" , "hello world" };
     private int index;
 
     //how fast the letters in the sentences will be typed out
-    [SerializeField] private float typingSpeed;
+    [SerializeField] private float typingSpeed = .05f;
 
     public GameObject continueButton;
 
@@ -31,7 +31,8 @@ public class BadDialogue : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        //continueButton = 
+        continueButton = GameObject.FindGameObjectWithTag("Button");
+
         textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(Type());
     }
@@ -59,6 +60,7 @@ public class BadDialogue : MonoBehaviour
     public void NextSentence()
     {
         continueButton.SetActive(false);
+        Debug.Log("Testing NExt Sentence");
 
         if (index < badSentences.Length - 1)
         {
