@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterSpawner : MonoBehaviour
 {
     //creates two GameObject character variables that will be assigned later in the SapwnCharacter function 
     public GameObject goodCharacter;
     public GameObject badCharacter;
+    private GameObject _character;
 
     //pulls variable from the ButtonClick class
     public ButtonClick buttonClick;
-    private bool isGood;
+    public bool isGood;
 
     //Gets a random true or false boolean that will check if the upcoming character will be good or bad
-    private bool GoodOrBad()
+    public bool GoodOrBad()
     {
 
         if (Random.value >= 0.5)
@@ -30,25 +32,28 @@ public class CharacterSpawner : MonoBehaviour
         if (isGood == true)
         {
             //instantiates a goodCharacter game object and sets it to the goodCharacter variable
-            goodCharacter = Instantiate(goodCharacter, transform.position, Quaternion.identity);
-            
+            _character = Instantiate(goodCharacter, transform.position, Quaternion.identity);
+            //adds the dialogue script as a component
+            _character.AddComponent<GoodDialogue>();
         }
         else
         {
             //instantiates a badCharacter game object and sets it to the badCharacter variable
-            badCharacter = Instantiate(badCharacter, transform.position, Quaternion.identity);
-           
+            _character = Instantiate(badCharacter, transform.position, Quaternion.identity);
+            //adds in the Dialogue script as a component
+            _character.AddComponent<BadDialogue>();
+
         }
     }
 
-    //when yes or no button are clicked, destroy the character game objects
+    //when yes or no button are clicked, destroy the character game objects, randomize the good or bad boolean,
+    //then spawn a new character, and set the buttonClicked boolean back to false
     private void DestroyCharacter()
     {
         if (buttonClick.buttonClicked == true)
         {
             Debug.Log("Destroyed character");
-            GameObject.Destroy(badCharacter);
-            GameObject.Destroy(goodCharacter);
+            Destroy(_character);
             GoodOrBad();
             SpawnCharacter();
             buttonClick.buttonClicked = false;
@@ -58,7 +63,7 @@ public class CharacterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //calls the function that decide and spawn the type of character 
+        //calls the functions that decide and spawn the type of character 
         GoodOrBad();
         SpawnCharacter();
        
