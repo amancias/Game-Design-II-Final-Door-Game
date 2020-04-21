@@ -43,7 +43,7 @@ public class GoodDialogue : MonoBehaviour
     {
         if (textDisplay.text == goodSentences[index])
         {
-            continueButton.SetActive(true);
+            continueButton.SetActive(false);
         }
     }
 

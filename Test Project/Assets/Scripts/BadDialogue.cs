@@ -42,7 +42,7 @@ public class BadDialogue : MonoBehaviour
     {
         if (textDisplay.text == badSentences[index])
         {
-            continueButton.SetActive(true);
+            continueButton.SetActive(false);
         }
     }
 
