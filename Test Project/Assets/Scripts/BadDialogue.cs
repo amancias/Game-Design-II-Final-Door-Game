@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 
@@ -24,17 +25,32 @@ public class BadDialogue : MonoBehaviour
 
     public GameObject continueButton;
 
+    public Button _comeIn;
+    public Button _goAway;
+
 
     /// <summary>
     /// sets the continue button and text display to the in scene game objects
     /// still need to set the continue button
     /// </summary>
+    /// 
+    private void Awake()
+    {
+        _comeIn = GetComponent<Button>();
+        _goAway = GetComponent<Button>();
+    }
     private void Start()
     {
+        _comeIn = GameObject.Find("YES").GetComponent<Button>();
+        _goAway = GameObject.Find("NO").GetComponent<Button>();
+
         continueButton = GameObject.FindGameObjectWithTag("Button");
 
         textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(Type());
+
+        _comeIn.onClick.AddListener(NextSentence);
+        _goAway.onClick.AddListener(NextSentence);
     }
 
     //when the text from the current sentence is fully displayed, the continue button will pop up

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class CountdownTimer : MonoBehaviour
             currentTime -= 1 * Time.deltaTime;
             print(currentTime); //will not work without this line
             CountDownText.text = currentTime.ToString("0");
+        }
+
+        if (currentTime <= 0)
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }

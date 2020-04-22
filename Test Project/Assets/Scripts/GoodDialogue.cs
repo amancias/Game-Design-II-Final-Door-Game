@@ -24,18 +24,32 @@ public class GoodDialogue : MonoBehaviour
     [SerializeField] private float typingSpeed = .05f;
 
     public GameObject continueButton;
- 
+
+    public Button comeIn;
+    public Button goAway;
+
     /// <summary>
     /// sets the continue button and text display to the in scene game objects
     /// still need to set the continue button
     /// </summary>
+    /// 
+    private void Awake()
+    {
+        comeIn = GetComponent<Button>();
+        goAway = GetComponent<Button>();
+    }
     private void Start()
     {
+        comeIn = GameObject.Find("YES").GetComponent<Button>();
+        goAway = GameObject.Find("NO").GetComponent<Button>();
+
         continueButton = GameObject.FindGameObjectWithTag("Button");
-      
 
         textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(Type());
+
+        comeIn.onClick.AddListener(NextSentence);
+        goAway.onClick.AddListener(NextSentence);
     }
 
     //when the text from the current sentence is fully displayed, the continue button will pop up

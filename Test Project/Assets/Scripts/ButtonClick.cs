@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class ButtonClick : MonoBehaviour
 {
     //creates a variable based on the CountdownTimer class
     public CountdownTimer Timer;
     public bool buttonClicked = false;
 
+
+
+    public void Start()
+    {
+
+    }
     /*When the no buttron is clicked, tells the player to go away, resets the time limit abck to 30 seconds,
     sets the boolean state of buttonClicked to true, which will then be accessed in the CharacterSpawner class function
     within the DestroyCharacter function
@@ -23,6 +30,7 @@ public class ButtonClick : MonoBehaviour
     public void ComeIn()
     {
         Debug.Log("Come in");
+
         Timer.currentTime = 30f;
         buttonClicked = true;
     }
