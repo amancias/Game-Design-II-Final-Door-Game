@@ -6,9 +6,8 @@ using TMPro;
 
 
 /*To Do
- * need to randomize the selction of sentences from their arrays and figure out a way to not reuse them
- * set the Continue Game Object to the variable
- * Destroy the text when going to the next character
+ * need to randomize the selction of sentences from their arrays and figure out a way to not reuse them (HP)
+ *  (Fixed maybe) Destroy the H when going to the next character (LP)
  */
 
 public class GoodDialogue : MonoBehaviour
@@ -77,7 +76,7 @@ public class GoodDialogue : MonoBehaviour
         //continueButton.SetActive(false);
         Debug.Log("Testing NExt Sentence");
 
-        if (index < goodSentences.Length - 1)
+        if (index < goodSentences.Length - 2)
         {
             index++;
             textDisplay.text = "";
