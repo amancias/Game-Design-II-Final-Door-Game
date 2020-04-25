@@ -23,7 +23,7 @@ public class BadDialogue : MonoBehaviour
     //how fast the letters in the sentences will be typed out
     [SerializeField] private float typingSpeed = .05f;
 
-    public GameObject continueButton;
+    //public GameObject continueButton;
 
     public Button _comeIn;
     public Button _goAway;
@@ -44,7 +44,7 @@ public class BadDialogue : MonoBehaviour
         _comeIn = GameObject.Find("YES").GetComponent<Button>();
         _goAway = GameObject.Find("NO").GetComponent<Button>();
 
-        continueButton = GameObject.FindGameObjectWithTag("Button");
+        //continueButton = GameObject.FindGameObjectWithTag("Button");
 
         textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(Type());
@@ -56,10 +56,10 @@ public class BadDialogue : MonoBehaviour
     //when the text from the current sentence is fully displayed, the continue button will pop up
     private void Update()
     {
-        if (textDisplay.text == badSentences[index])
+        /*if (textDisplay.text == badSentences[index])
         {
             continueButton.SetActive(false);
-        }
+        }*/
     }
 
     IEnumerator Type()
@@ -75,7 +75,7 @@ public class BadDialogue : MonoBehaviour
     //when clicking the conntinue button, moves onto the next sentence in the list
     public void NextSentence()
     {
-        continueButton.SetActive(false);
+        //continueButton.SetActive(false);
         Debug.Log("Testing NExt Sentence");
 
         if (index < badSentences.Length - 1)
