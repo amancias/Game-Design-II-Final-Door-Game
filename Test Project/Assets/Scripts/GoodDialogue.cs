@@ -16,11 +16,12 @@ public class GoodDialogue : MonoBehaviour
 
     //sets string array that will hold the sentences for good characters
     //need to put the dialogue in here
-    [SerializeField] private string[] goodSentences = { "You look like a guy who would let me in", "Hello" };
+    public DialogueManager _sentence;
+    
     private int index;
 
     //how fast the letters in the sentences will be typed out
-    [SerializeField] private float typingSpeed = .05f;
+    private float typingSpeed = .05f;
 
     //public GameObject continueButton;
 
@@ -41,6 +42,7 @@ public class GoodDialogue : MonoBehaviour
     {
         comeIn = GameObject.Find("YES").GetComponent<Button>();
         goAway = GameObject.Find("NO").GetComponent<Button>();
+        _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
 
         //continueButton = GameObject.FindGameObjectWithTag("Button");
 
@@ -62,7 +64,7 @@ public class GoodDialogue : MonoBehaviour
 
     IEnumerator Type()
     {
-        foreach (char letter in goodSentences[index].ToCharArray())
+        foreach (char letter in _sentence.sentence.ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
@@ -76,7 +78,7 @@ public class GoodDialogue : MonoBehaviour
         //continueButton.SetActive(false);
         Debug.Log("Testing NExt Sentence");
 
-        if (index < goodSentences.Length - 2)
+        if (index < _sentence.sentence.Length - 1)
         {
             index++;
             textDisplay.text = "";

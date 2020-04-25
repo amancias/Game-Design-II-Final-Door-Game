@@ -16,11 +16,11 @@ public class BadDialogue : MonoBehaviour
 
     //sets string array that will hold the sentences for bad characters
     //need to put the dialogue in here
-    [SerializeField] private string[] badSentences = { "Hey let me in bud" , "hello world" };
+    public DialogueManager _sentence;
     private int index;
 
     //how fast the letters in the sentences will be typed out
-    [SerializeField] private float typingSpeed = .05f;
+    private float typingSpeed = .05f;
 
     //public GameObject continueButton;
 
@@ -42,6 +42,7 @@ public class BadDialogue : MonoBehaviour
     {
         _comeIn = GameObject.Find("YES").GetComponent<Button>();
         _goAway = GameObject.Find("NO").GetComponent<Button>();
+        _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
 
         //continueButton = GameObject.FindGameObjectWithTag("Button");
 
@@ -63,7 +64,7 @@ public class BadDialogue : MonoBehaviour
 
     IEnumerator Type()
     {
-        foreach (char letter in badSentences[index].ToCharArray())
+        foreach (char letter in _sentence.sentence.ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
@@ -77,7 +78,7 @@ public class BadDialogue : MonoBehaviour
         //continueButton.SetActive(false);
         Debug.Log("Testing NExt Sentence");
 
-        if (index < badSentences.Length - 2)
+        if (index < _sentence.sentence.Length - 1)
         {
             index++;
             textDisplay.text = "";

@@ -258,10 +258,9 @@ GameObject:
   - component: {fileID: 477008532}
   - component: {fileID: 477008531}
   - component: {fileID: 477008533}
-  - component: {fileID: 477008534}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: DialogueManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 1942733815}
-  buttonClicked: 0
+  buttonClicked: 1
 --- !u!4 &477008532
 Transform:
   m_ObjectHideFlags: 0
@@ -310,20 +309,24 @@ MonoBehaviour:
   - poop
   goodNames:
   - Ms. Poop
---- !u!114 &477008534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477008530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e84c86e03b5c2974cad67ceef297a7f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comeIn: {fileID: 762528846}
-  goAway: {fileID: 607678292}
+  goodSentences:
+  - All this cash is burning a hole in my pocket!
+  - "God I\u2019m thirsty!"
+  - My friend told me this place rules!
+  - Health inspector, let me in. Now.
+  - Please let me in, i haven't had social contact in weeks
+  - Damn this place FANCY
+  badSentences:
+  - I am definitely not here to rob you... definitely
+  - Let me in, or things are gonna get ugly!
+  - Hi, Do you have a moment to talk about our lord and savior Wood Wilson?
+  - BRO SQUARE UP BRO WHATS GOOD BRO CMON BRO LEMME IN BRO WHATS GOOD BRO
+  - "God i\u2019m so drunk"
+  - "I\u2019m gonna sell so many drugs"
+  - Im gonna DO so many drugs and you CANT stop me
+  - I demand to speak to the manager right this second or im getting your broke-ass
+    fired
+  sentence: 
 --- !u!1 &607678290
 GameObject:
   m_ObjectHideFlags: 0
