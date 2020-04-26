@@ -15,13 +15,13 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PickBadName();
-        PickGoodName();
+        
     }
 
     void Update()
     {
-          
+        PickBadName();
+        PickGoodName();
     }
 
     //picks a random name from the bad name list, sets it into badGoodName and outputs it
