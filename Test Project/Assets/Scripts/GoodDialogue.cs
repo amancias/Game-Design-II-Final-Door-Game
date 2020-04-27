@@ -6,9 +6,8 @@ using TMPro;
 
 
 /*To Do
- * need to randomize the selction of sentences from their arrays and figure out a way to not reuse them
- * set the Continue Game Object to the variable
- * Destroy the text when going to the next character
+ * need to randomize the selction of sentences from their arrays and figure out a way to not reuse them (HP)
+ *  (Fixed maybe) Destroy the H when going to the next character (LP)
  */
 
 public class GoodDialogue : MonoBehaviour
@@ -17,13 +16,14 @@ public class GoodDialogue : MonoBehaviour
 
     //sets string array that will hold the sentences for good characters
     //need to put the dialogue in here
-    [SerializeField] private string[] goodSentences = { "You look like a guy who would let me in", "Hello" };
+    public DialogueManager _sentence;
+    
     private int index;
 
     //how fast the letters in the sentences will be typed out
-    [SerializeField] private float typingSpeed = .05f;
+    private float typingSpeed = .05f;
 
-    public GameObject continueButton;
+    //public GameObject continueButton;
 
     public Button comeIn;
     public Button goAway;
@@ -42,8 +42,9 @@ public class GoodDialogue : MonoBehaviour
     {
         comeIn = GameObject.Find("YES").GetComponent<Button>();
         goAway = GameObject.Find("NO").GetComponent<Button>();
+        _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
 
-        continueButton = GameObject.FindGameObjectWithTag("Button");
+        //continueButton = GameObject.FindGameObjectWithTag("Button");
 
         textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(Type());
@@ -55,15 +56,15 @@ public class GoodDialogue : MonoBehaviour
     //when the text from the current sentence is fully displayed, the continue button will pop up
     private void Update()
     {
-        if (textDisplay.text == goodSentences[index])
+        /*if (textDisplay.text == goodSentences[index])
         {
             continueButton.SetActive(false);
-        }
+        }*/
     }
 
     IEnumerator Type()
     {
-        foreach (char letter in goodSentences[index].ToCharArray())
+        foreach (char letter in _sentence.sentence.ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
@@ -74,10 +75,10 @@ public class GoodDialogue : MonoBehaviour
     //when clicking the conntinue button, moves onto the next sentence in the list
     public void NextSentence()
     {
-        continueButton.SetActive(false);
+        //continueButton.SetActive(false);
         Debug.Log("Testing NExt Sentence");
 
-        if (index < goodSentences.Length - 1)
+        if (index < _sentence.sentence.Length - 1)
         {
             index++;
             textDisplay.text = "";
