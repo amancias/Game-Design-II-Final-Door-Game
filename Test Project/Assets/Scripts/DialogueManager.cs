@@ -7,6 +7,8 @@ public class DialogueManager : MonoBehaviour
     //Lists of names for the characters
     public List<string> badNames = new List<string>();
     public List<string> goodNames = new List<string>();
+
+    //lists of sentences for each type of characters
     public List<string> goodSentences = new List<string>(); 
     public List<string> badSentences = new List<string>();
 
@@ -51,6 +53,8 @@ public class DialogueManager : MonoBehaviour
         GrabAndRemoveGood();
     }
 
+    //functions that grab a good or bad sentence. Called in the Update function 
+    //still need to find a way to delete the grabs
     public void GrabAndRemoveBad()
     { 
         sentence = badSentences[Random.Range(0, badSentences.Count)];

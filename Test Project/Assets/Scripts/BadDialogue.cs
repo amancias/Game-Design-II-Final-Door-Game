@@ -7,7 +7,6 @@ using TMPro;
 
 /*To Do
  * need to randomize the selction of sentences from their arrays and figure out a way to not reuse them (HP)
- * Destroy the text H going to the next character (LP)
  */
 
 public class BadDialogue : MonoBehaviour
