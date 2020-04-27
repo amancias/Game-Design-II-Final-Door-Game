@@ -316,6 +316,10 @@ MonoBehaviour:
   - Health inspector, let me in. Now.
   - Please let me in, i haven't had social contact in weeks
   - Damn this place FANCY
+  - "I\u2019m gonna get my groove on"
+  - "I\u2019ve heard good things about this bar"
+  - This place is poppin!
+  - Hey man, I forgot my wallet in there!
   badSentences:
   - I am definitely not here to rob you... definitely
   - Let me in, or things are gonna get ugly!
@@ -326,6 +330,8 @@ MonoBehaviour:
   - Im gonna DO so many drugs and you CANT stop me
   - I demand to speak to the manager right this second or im getting your broke-ass
     fired
+  - let me in so I can drink myself to death.
+  - "I\u2019ll give ya three goats and my sister for a shot! "
   sentence: 
   _isgood: {fileID: 294488787}
 --- !u!1 &607678290
