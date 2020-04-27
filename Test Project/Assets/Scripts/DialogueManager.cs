@@ -11,17 +11,26 @@ public class DialogueManager : MonoBehaviour
     public List<string> badSentences = new List<string>();
 
     public string sentence;
+    public CharacterSpawner _isgood;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     void Update()
     {
-        PickBadName();
-        PickGoodName();
+        if (_isgood.isGood == false)
+        {
+            Debug.Log("false");
+            PickBadName();
+        }
+        else if (_isgood.isGood == true)
+        {
+            Debug.Log("true");
+            PickGoodName();
+        }
     }
 
     //picks a random name from the bad name list, sets it into badGoodName and outputs it
