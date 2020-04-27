@@ -327,6 +327,7 @@ MonoBehaviour:
   - I demand to speak to the manager right this second or im getting your broke-ass
     fired
   sentence: 
+  _isgood: {fileID: 294488787}
 --- !u!1 &607678290
 GameObject:
   m_ObjectHideFlags: 0
