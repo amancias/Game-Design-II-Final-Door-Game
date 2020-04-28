@@ -34,7 +34,8 @@ public class CharacterSpawner : MonoBehaviour
             //instantiates a goodCharacter game object and sets it to the goodCharacter variable
             _character = Instantiate(goodCharacter, transform.position, Quaternion.identity);
             //adds the dialogue script as a component
-            _character.AddComponent<GoodDialogue>();    
+            _character.AddComponent<GoodDialogue>();
+            _character.AddComponent<MoveCharacter>();
         }
         else
         {
@@ -42,6 +43,7 @@ public class CharacterSpawner : MonoBehaviour
             _character = Instantiate(badCharacter, transform.position, Quaternion.identity);
             //adds in the Dialogue script as a component
             _character.AddComponent<BadDialogue>();
+            _character.AddComponent<MoveCharacter>();
 
         }
     }
