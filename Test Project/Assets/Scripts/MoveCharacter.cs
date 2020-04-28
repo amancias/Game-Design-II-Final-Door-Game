@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class MoveCharacter : MonoBehaviour
 {
-    private bool stop;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Move the character forward");
-    
     }
 
     // Update is called once per frame
@@ -18,8 +16,5 @@ public class MoveCharacter : MonoBehaviour
         transform.position += Vector3.back * Time.deltaTime * 6f;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
+  
 }

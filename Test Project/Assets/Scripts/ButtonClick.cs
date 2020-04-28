@@ -8,7 +8,7 @@ public class ButtonClick : MonoBehaviour
     //creates a variable based on the CountdownTimer class
     public CountdownTimer Timer;
     public bool buttonClicked = false;
-
+    public TriggerStop _canvas;
 
 
     public void Start()
@@ -24,6 +24,7 @@ public class ButtonClick : MonoBehaviour
         Debug.Log("Go away");
         Timer.currentTime = 30f;
         buttonClicked = true;
+        _canvas.canvas.SetActive(false);
     }
 
     //does the same as the GoAway function but just tells the character to come in
@@ -33,6 +34,7 @@ public class ButtonClick : MonoBehaviour
 
         Timer.currentTime = 30f;
         buttonClicked = true;
+        _canvas.canvas.SetActive(false);
     }
 }
     //both the GoAway and ComeIn function will be accessed from the YES and NO On Click() function

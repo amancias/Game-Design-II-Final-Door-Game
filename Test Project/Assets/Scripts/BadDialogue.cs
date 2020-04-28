@@ -19,13 +19,12 @@ public class BadDialogue : MonoBehaviour
     private int index;
 
     //how fast the letters in the sentences will be typed out
-    private float typingSpeed = .05f;
+    private float typingSpeed = .01f;
 
     //public GameObject continueButton;
 
     public Button _comeIn;
     public Button _goAway;
-
 
     /// <summary>
     /// sets the continue button and text display to the in scene game objects
@@ -59,6 +58,7 @@ public class BadDialogue : MonoBehaviour
         {
             continueButton.SetActive(false);
         }*/
+        
     }
 
     IEnumerator Type()
@@ -81,7 +81,7 @@ public class BadDialogue : MonoBehaviour
         {
             index++;
             textDisplay.text = "";
-            StartCoroutine(Type());
+            //StartCoroutine(Type());
         }
         else
         {

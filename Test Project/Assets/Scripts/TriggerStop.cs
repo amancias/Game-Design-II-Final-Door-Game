@@ -2,18 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UISpawner : MonoBehaviour
+public class TriggerStop : MonoBehaviour
 {
+    public bool stop;
     public GameObject canvas;
+
     // Start is called before the first frame update
     void Start()
     {
+        stop = false;
         canvas.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (stop == true)
+        {
+            canvas.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Triggered");
+        stop = true;
     }
 }

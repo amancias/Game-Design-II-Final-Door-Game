@@ -36,6 +36,8 @@ public class CharacterSpawner : MonoBehaviour
             //adds the dialogue script as a component
             _character.AddComponent<GoodDialogue>();
             _character.AddComponent<MoveCharacter>();
+            _character.AddComponent<CapsuleCollider>();
+            _character.AddComponent<Rigidbody>();
         }
         else
         {
@@ -44,7 +46,8 @@ public class CharacterSpawner : MonoBehaviour
             //adds in the Dialogue script as a component
             _character.AddComponent<BadDialogue>();
             _character.AddComponent<MoveCharacter>();
-
+            _character.AddComponent<CapsuleCollider>();
+            _character.AddComponent<Rigidbody>();
         }
     }
 
