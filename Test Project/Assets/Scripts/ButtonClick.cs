@@ -6,10 +6,9 @@ using TMPro;
 public class ButtonClick : MonoBehaviour
 {
     //creates a variable based on the CountdownTimer class
-    public CountdownTimer Timer;
+    public Timer currentTime;
     public bool buttonClicked = false;
     public TriggerStop _canvas;
-
 
     public void Start()
     {
@@ -22,8 +21,8 @@ public class ButtonClick : MonoBehaviour
     public void GoAway()
     {
         Debug.Log("Go away");
-        Timer.currentTime = 10f;
         buttonClicked = true;
+        currentTime.timeRemaining = 10f;
         _canvas.canvas.SetActive(false);
     }
 
@@ -31,9 +30,8 @@ public class ButtonClick : MonoBehaviour
     public void ComeIn()
     {
         Debug.Log("Come in");
-
-        Timer.currentTime = 10f;
         buttonClicked = true;
+        currentTime.timeRemaining = 10f;
         _canvas.canvas.SetActive(false);
     }
 }
