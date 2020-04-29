@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - DialogueManager
+  - Character
   layers:
   - Default
   - TransparentFX

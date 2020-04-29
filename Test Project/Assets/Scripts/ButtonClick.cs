@@ -22,7 +22,7 @@ public class ButtonClick : MonoBehaviour
     public void GoAway()
     {
         Debug.Log("Go away");
-        Timer.currentTime = 30f;
+        Timer.currentTime = 10f;
         buttonClicked = true;
         _canvas.canvas.SetActive(false);
     }
@@ -32,7 +32,7 @@ public class ButtonClick : MonoBehaviour
     {
         Debug.Log("Come in");
 
-        Timer.currentTime = 30f;
+        Timer.currentTime = 10f;
         buttonClicked = true;
         _canvas.canvas.SetActive(false);
     }

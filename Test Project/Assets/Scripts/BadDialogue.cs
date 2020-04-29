@@ -26,6 +26,8 @@ public class BadDialogue : MonoBehaviour
     public Button _comeIn;
     public Button _goAway;
 
+    public TriggerStop _stop;
+
     /// <summary>
     /// sets the continue button and text display to the in scene game objects
     /// still need to set the continue button
@@ -35,10 +37,12 @@ public class BadDialogue : MonoBehaviour
     {
         _comeIn = GetComponent<Button>();
         _goAway = GetComponent<Button>();
+       
     }
     private void Start()
     {
-        _comeIn = GameObject.Find("YES").GetComponent<Button>();
+        _stop = GameObject.Find("Trigger").GetComponent<TriggerStop>();
+        /*_comeIn = GameObject.Find("YES").GetComponent<Button>();
         _goAway = GameObject.Find("NO").GetComponent<Button>();
         _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
 
@@ -48,7 +52,7 @@ public class BadDialogue : MonoBehaviour
         StartCoroutine(Type());
 
         _comeIn.onClick.AddListener(NextSentence);
-        _goAway.onClick.AddListener(NextSentence);
+        _goAway.onClick.AddListener(NextSentence);*/
     }
 
     //when the text from the current sentence is fully displayed, the continue button will pop up
@@ -58,7 +62,24 @@ public class BadDialogue : MonoBehaviour
         {
             continueButton.SetActive(false);
         }*/
-        
+
+        if (_stop.stop == true)
+        {
+            _comeIn = GameObject.Find("YES").GetComponent<Button>();
+            _goAway = GameObject.Find("NO").GetComponent<Button>();
+            _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+
+            //continueButton = GameObject.FindGameObjectWithTag("Button");
+
+            textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
+            StartCoroutine(Type());
+
+            _comeIn.onClick.AddListener(NextSentence);
+            _goAway.onClick.AddListener(NextSentence);
+
+            //sets the stop variable in triggerstop back to false.
+            _stop.stop = false;
+        }
     }
 
     IEnumerator Type()

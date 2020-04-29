@@ -38,6 +38,7 @@ public class CharacterSpawner : MonoBehaviour
             _character.AddComponent<MoveCharacter>();
             _character.AddComponent<CapsuleCollider>();
             _character.AddComponent<Rigidbody>();
+            _character.tag = "Character";
         }
         else
         {
@@ -48,6 +49,7 @@ public class CharacterSpawner : MonoBehaviour
             _character.AddComponent<MoveCharacter>();
             _character.AddComponent<CapsuleCollider>();
             _character.AddComponent<Rigidbody>();
+            _character.tag = "Character";
         }
     }
 

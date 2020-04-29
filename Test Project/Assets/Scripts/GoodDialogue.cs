@@ -38,10 +38,13 @@ public class GoodDialogue : MonoBehaviour
     {
         comeIn = GetComponent<Button>();
         goAway = GetComponent<Button>();
+        
+
     }
     private void Start()
     {
-        comeIn = GameObject.Find("YES").GetComponent<Button>();
+        pleaseStop = GameObject.Find("Trigger").GetComponent<TriggerStop>();
+        /*comeIn = GameObject.Find("YES").GetComponent<Button>();
         goAway = GameObject.Find("NO").GetComponent<Button>();
         _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
 
@@ -51,7 +54,7 @@ public class GoodDialogue : MonoBehaviour
         StartCoroutine(Type());
 
         comeIn.onClick.AddListener(NextSentence);
-        goAway.onClick.AddListener(NextSentence);
+        goAway.onClick.AddListener(NextSentence);*/
     }
 
     //when the text from the current sentence is fully displayed, the continue button will pop up
@@ -61,7 +64,24 @@ public class GoodDialogue : MonoBehaviour
         {
             continueButton.SetActive(false);
         }*/
-        
+
+        if (pleaseStop.stop == true)
+        {
+            comeIn = GameObject.Find("YES").GetComponent<Button>();
+            goAway = GameObject.Find("NO").GetComponent<Button>();
+            _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+
+            //continueButton = GameObject.FindGameObjectWithTag("Button");
+
+            textDisplay = GameObject.Find("Dialogue Text").GetComponent<TextMeshProUGUI>();
+            StartCoroutine(Type());
+
+            comeIn.onClick.AddListener(NextSentence);
+            goAway.onClick.AddListener(NextSentence);
+
+            //sets the stop in triggerstop to false
+            pleaseStop.stop = false;
+        }
     }
 
     IEnumerator Type()

@@ -476,9 +476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a22a54545cea644eb9e4bcff09b19ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodCharacter: {fileID: -927199367670048503, guid: aa192ac4b755e254da084d7a112f37d1,
+  goodCharacter: {fileID: -927199367670048503, guid: 976083ef05b8b504bbac27a7b6fbec58,
     type: 3}
-  badCharacter: {fileID: -927199367670048503, guid: e5e728a2507b0054a90e894bfa562ef7,
+  badCharacter: {fileID: -927199367670048503, guid: 976083ef05b8b504bbac27a7b6fbec58,
     type: 3}
   buttonClick: {fileID: 477008531}
   isGood: 0
@@ -490,7 +490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294488786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 119.05, y: 1.59, z: -389.22}
+  m_LocalPosition: {x: 119.05, y: 1.28, z: -408.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1376,6 +1376,7 @@ GameObject:
   - component: {fileID: 734291201}
   - component: {fileID: 734291203}
   - component: {fileID: 734291202}
+  - component: {fileID: 734291204}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -1442,6 +1443,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734291200}
   m_CullTransparentMesh: 0
+--- !u!225 &734291204
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734291200}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &752351523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,8 +2364,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.95706123, z: 3.6478882}
-  m_Center: {x: 0, y: 0.021469785, z: 0.18829346}
+  m_Size: {x: 1, y: 0.95706123, z: 0.94174194}
+  m_Center: {x: 0, y: 0.021469785, z: -1.1647797}
 --- !u!23 &933991917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2408,7 +2421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933991915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 118.87, y: 5.97, z: -398.44}
+  m_LocalPosition: {x: 118.87, y: 5.97, z: -415.16}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3829,7 +3842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  startTime: 30
+  startTime: 20
   CountDownText: {fileID: 1942733816}
 --- !u!114 &1942733816
 MonoBehaviour:
