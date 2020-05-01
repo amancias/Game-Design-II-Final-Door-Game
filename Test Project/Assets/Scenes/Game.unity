@@ -408,6 +408,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 0
   slider: {fileID: 45129879}
+  destroy: 0
+  _destroy: {fileID: 294488787}
+  _strikes: {fileID: 186947786}
+  _nextSentence: {fileID: 0}
 --- !u!1 &75370617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1028,7 @@ MonoBehaviour:
   strike2: {fileID: 782435562}
   strike3: {fileID: 1860411929}
   wrongBuzz: {fileID: 186947788}
+  strikes: 0
   good: {fileID: 294488787}
   _comeIn: {fileID: 477008531}
   gameOverCanvas: {fileID: 902895212}

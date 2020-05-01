@@ -88,7 +88,7 @@ public class CharacterSpawner : MonoBehaviour
 
     //when yes or no button are clicked, destroy the character game objects, randomize the good or bad boolean,
     //then spawn a new character, and set the buttonClicked boolean back to false
-    private void DestroyCharacter()
+    public void DestroyCharacter()
     {
         if (buttonClick.buttonClicked == true)
         {
@@ -130,5 +130,13 @@ public class CharacterSpawner : MonoBehaviour
     {
         DestroyCharacter();
         
+    }
+
+    public void _DestroyCharacter()
+    {
+        Debug.Log("Destroyed character");
+        Destroy(_character);
+        GoodOrBad();
+        SpawnCharacter();
     }
 }

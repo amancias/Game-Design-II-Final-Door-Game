@@ -26,8 +26,8 @@ public class CountdownTimer : MonoBehaviour
         }
 
         if (currentTime <= 0)
-        {
-            SceneManager.LoadScene(2);
+        { 
+
         }
     }
 }

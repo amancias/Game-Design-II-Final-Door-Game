@@ -9,6 +9,10 @@ public class Timer : MonoBehaviour
     public float timeRemaining;
     public const float timeMax = 10f;
     public Slider slider;
+    public bool destroy = false;
+    public CharacterSpawner _destroy;
+    public ScoreSystem _strikes;
+    public GoodDialogue _nextSentence;
 
     private void Start()
     {
@@ -22,7 +26,16 @@ public class Timer : MonoBehaviour
         if (timeRemaining <= 0)
         {
             timeRemaining = 0;
-            SceneManager.LoadScene(2);
+            destroy = true;
+
+            if (destroy == true)
+            {
+                _destroy._DestroyCharacter();
+                _strikes.strikes++;
+                destroy = false;
+                timeRemaining = timeMax;
+            }
+
 
         }
         else if (timeRemaining > 0)

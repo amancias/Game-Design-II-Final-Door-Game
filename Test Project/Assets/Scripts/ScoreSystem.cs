@@ -10,7 +10,7 @@ public class ScoreSystem : MonoBehaviour
     public GameObject strike3;
     public AudioSource wrongBuzz;
 
-    private int strikes = 0;
+    public int strikes = 0;
     private int letIn = 0;
     public CharacterSpawner good;
     public ButtonClick _comeIn;

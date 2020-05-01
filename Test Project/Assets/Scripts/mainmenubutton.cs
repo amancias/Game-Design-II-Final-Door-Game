@@ -26,4 +26,9 @@ public class mainmenubutton : MonoBehaviour
     {
         credits.SetActive(false);
     }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
