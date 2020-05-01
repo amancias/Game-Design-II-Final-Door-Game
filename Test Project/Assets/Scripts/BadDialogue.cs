@@ -65,8 +65,8 @@ public class BadDialogue : MonoBehaviour
 
         if (_stop.stop == true)
         {
-            _comeIn = GameObject.Find("YES").GetComponent<Button>();
-            _goAway = GameObject.Find("NO").GetComponent<Button>();
+            _comeIn = GameObject.Find("Yes").GetComponent<Button>();
+            _goAway = GameObject.Find("No").GetComponent<Button>();
             _sentence = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
 
             //continueButton = GameObject.FindGameObjectWithTag("Button");
