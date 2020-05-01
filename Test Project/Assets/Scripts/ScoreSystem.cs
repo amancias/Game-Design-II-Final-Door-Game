@@ -46,7 +46,7 @@ public class ScoreSystem : MonoBehaviour
                
         }
 
-        if (letIn == 2)
+        if (letIn == 10)
         {
             winCanvas.SetActive(true);
             Time.timeScale = 0;
