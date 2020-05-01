@@ -8,6 +8,27 @@ public class CharacterSpawner : MonoBehaviour
     //creates two GameObject character variables that will be assigned later in the SapwnCharacter function 
     public GameObject goodCharacter;
     public GameObject badCharacter;
+
+    //good character objects
+    public GameObject goodTucker;
+    public GameObject goodAlejandro;
+    public GameObject goodZarmihna;
+    public GameObject goodCoco;
+    public GameObject goodChad;
+
+    //bad character objects
+    public GameObject badGeorge;
+    public GameObject badHarold;
+    public GameObject badBritney;
+    public GameObject badVickey;
+    public GameObject badBartholomew;
+
+    //good character lsit with the objects
+    public List<GameObject> goodCharacters = new List<GameObject>();
+    public List<GameObject> badCharacters = new List<GameObject>();
+
+    
+
     private GameObject _character;
 
     //pulls variable from the ButtonClick class
@@ -20,10 +41,22 @@ public class CharacterSpawner : MonoBehaviour
 
         if (Random.value >= 0.5)
         {
+            PickGoodCharacter();
             return isGood = true;
         }
+        PickBadCharacter();
         return isGood = false;
 
+    }
+
+    void PickGoodCharacter()
+    {
+        goodCharacter = goodCharacters[Random.Range(0, goodCharacters.Count)];
+    }
+
+    void PickBadCharacter()
+    {
+        badCharacter = badCharacters[Random.Range(0, badCharacters.Count)];
     }
     //spawms the character based on what moral compass it lies under 
     private void SpawnCharacter()
@@ -70,6 +103,22 @@ public class CharacterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set good characters in list
+        goodCharacters.Add(goodTucker);
+        goodCharacters.Add(goodAlejandro);
+        goodCharacters.Add(goodZarmihna);
+        goodCharacters.Add(goodChad);
+        goodCharacters.Add(goodCoco);
+
+        //set badcharacters in list
+        badCharacters.Add(badBartholomew);
+        badCharacters.Add(badBritney);
+        badCharacters.Add(badGeorge);
+        badCharacters.Add(badHarold);
+        badCharacters.Add(badVickey);
+
+        PickGoodCharacter();
+        PickBadCharacter();
         //calls the functions that decide and spawn the type of character 
         GoodOrBad();
         SpawnCharacter();
@@ -80,5 +129,6 @@ public class CharacterSpawner : MonoBehaviour
     void Update()
     {
         DestroyCharacter();
+        
     }
 }
