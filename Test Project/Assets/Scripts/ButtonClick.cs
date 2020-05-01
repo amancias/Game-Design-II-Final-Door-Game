@@ -9,6 +9,7 @@ public class ButtonClick : MonoBehaviour
     public Timer currentTime;
     public bool buttonClicked = false;
     public TriggerStop _canvas;
+    public bool comeIn;
 
     public void Start()
     {
@@ -22,6 +23,7 @@ public class ButtonClick : MonoBehaviour
     {
         Debug.Log("Go away");
         buttonClicked = true;
+        comeIn = false;
         currentTime.timeRemaining = 10f;
         _canvas.canvas.SetActive(false);
     }
@@ -31,6 +33,7 @@ public class ButtonClick : MonoBehaviour
     {
         Debug.Log("Come in");
         buttonClicked = true;
+        comeIn = true;
         currentTime.timeRemaining = 10f;
         _canvas.canvas.SetActive(false);
     }
