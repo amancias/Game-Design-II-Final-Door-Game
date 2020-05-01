@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreSystem : MonoBehaviour
-{
+{ 
 
     public GameObject strike1;
     public GameObject strike2;
@@ -15,6 +15,12 @@ public class ScoreSystem : MonoBehaviour
     public CharacterSpawner good;
     public ButtonClick _comeIn;
     public GameObject gameOverCanvas;
+    public GameObject winCanvas;
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,7 +44,13 @@ public class ScoreSystem : MonoBehaviour
                 strike3.SetActive(false);
                 break;
                
-        } 
+        }
+
+        if (letIn == 2)
+        {
+            winCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void WrongChoice()
